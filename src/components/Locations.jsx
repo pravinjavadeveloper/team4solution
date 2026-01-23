@@ -34,7 +34,7 @@ const locationsData = [
     address: "2/271 Ormiston road, Flat Bush, Auckland, 2019, New Zealand",
     number: "+64-272581328",
     // Image: Auckland Sky Tower (NZ)
-    image: "https://images.unsplash.com/photo-1507699622177-4888e6d72116?q=80&w=800&auto=format&fit=crop", 
+    image: "https://i2.wp.com/eternalarrival.com/wp-content/uploads/2020/09/shutterstock_647554633.jpg?q=80&w=800&auto=format&fit=crop", 
   },
 ];
 
