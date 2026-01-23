@@ -150,7 +150,7 @@ export default function WhoWeAre() {
   );
 }
 
-// Helper Component to clean up the main code
+
 function StatBox({ icon, value, suffix, label, delay }) {
   return (
     <motion.div 

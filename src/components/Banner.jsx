@@ -64,7 +64,7 @@ const Banner = () => {
             viewport={{ once: true }}
           >
             <img
-              src="/path/to/your/man-with-laptop-image.png" // Replace with your actual image path
+              src="/path/to/your/man-with-laptop-image.png"
               alt="Man pointing with a laptop"
               className="w-full max-w-md mx-auto lg:ml-auto object-contain"
             />
@@ -108,7 +108,7 @@ const Banner = () => {
           animate={{ backgroundPosition: '100% 50%' }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           style={{
-            backgroundImage: 'url("/path/to/subtle-pattern.png")', // Add a subtle pattern if you have one
+            backgroundImage: 'url("/path/to/subtle-pattern.png")', 
             backgroundSize: '200% 200%',
           }}
         ></motion.div>
