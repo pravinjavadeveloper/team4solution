@@ -20,35 +20,30 @@ const SOLUTIONS = [
     title: "Mobile App Development",
     desc: "We build high-performance, feature-packed native mobile applications for iOS & Android. Our apps deliver seamless user experiences and robust functionality.",
     img: mob,
-    color: "from-purple-500/20 to-blue-500/5",
   },
   {
     id: 2,
     title: "Website Development",
     desc: "Create a powerful digital footprint with our custom web development services. We ensure responsive, fast, and secure websites tailored to your brand.",
     img: web,
-    color: "from-pink-500/20 to-rose-500/5",
   },
   {
     id: 3,
     title: "E-Commerce Solutions",
     desc: "Drive sales with our scalable e-commerce platforms. From Shopify to custom builds, we create secure shopping experiences that convert visitors into customers.",
     img: ecomm,
-    color: "from-orange-500/20 to-amber-500/5",
   },
   {
     id: 4,
     title: "SaaS Development",
     desc: "We engineer scalable Software-as-a-Service products. Our multi-tenant architectures are secure, efficient, and ready for global growth.",
     img: saas,
-    color: "from-cyan-500/20 to-blue-500/5",
   },
   {
     id: 5,
     title: "UI/UX Designing",
     desc: "User-centric design is at our core. We craft intuitive interfaces and engaging user experiences that make your digital products a joy to use.",
     img: uiux,
-    color: "from-emerald-500/20 to-teal-500/5",
   },
 ];
 
@@ -57,7 +52,6 @@ export default function Solutions() {
   const rightPanelRef = useRef(null);
   const cardsRef = useRef([]);
 
-  // Restored: Start at -1 so first image is hidden initially
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const addToRefs = (el) => {
@@ -68,14 +62,13 @@ export default function Solutions() {
 
   useGSAP(
     () => {
-      // RESPONSIVE FIX: Only run pinning logic on Desktop (min-width: 768px)
+      // RESPONSIVE LOGIC: Only run pinning/active-index logic on Desktop
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        // --- DESKTOP LOGIC (Restored your specific values) ---
         ScrollTrigger.create({
           trigger: containerRef.current,
-          start: "top top-=250", // Restored your offset
+          start: "top top-=250",
           end: "bottom bottom",
           pin: rightPanelRef.current,
           pinSpacing: false,
@@ -121,16 +114,19 @@ export default function Solutions() {
             <div
               key={item.id}
               ref={addToRefs}
-
               className="flex flex-col justify-center border-l border-white/10 p-6 py-20 md:p-[5.5rem] md:pt-32 md:min-h-screen"
             >
               <div
-                className="max-w-lg transition-opacity duration-500"
-                // Restored your opacity logic for Desktop
-                style={{ opacity: activeIndex === index ? 1 : 0.3 }}
+                // --- FIXED HERE ---
+                // 1. Removed style={{ opacity: ... }}
+                // 2. Used Tailwind classes: "md:opacity-30" handles desktop dimming.
+                // 3. On Mobile, "md:" is ignored, so it defaults to opacity-100 (Full Visibility).
+                className={`max-w-lg transition-opacity duration-500 ${
+                  activeIndex === index ? "opacity-100" : "md:opacity-30"
+                }`}
               >
                 
-                {/* Mobile Only Image (Stack layout on small screens) */}
+                {/* Mobile Only Image */}
                 <div className="block md:hidden mb-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                     <img src={item.img} alt={item.title} className="w-full h-auto object-cover" />
                 </div>
@@ -153,8 +149,7 @@ export default function Solutions() {
           ))}
         </div>
 
-        {/* --- RIGHT SIDE: PINNED IMAGES --- */}
-        {/* Responsive Fix: Hidden on mobile (hidden), Flex on Desktop (md:flex) */}
+        {/* --- RIGHT SIDE: PINNED IMAGES (Desktop Only) --- */}
         <div
           ref={rightPanelRef}
           className="hidden md:flex w-1/2 h-screen items-start justify-center order-1 md:order-2 sticky top-0 overflow-hidden pt-[150px]"
@@ -166,17 +161,17 @@ export default function Solutions() {
                 key={item.id}
                 className="absolute inset-0 w-full h-full"
                 
-                // Restored your Initial State: All Top-Collapsed
+                // Initial State
                 initial={{
                   clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                 }}
                 
-                // Restored your Logic: Reveal if index <= activeIndex
+                // Animate based on active index
                 animate={{
                   clipPath:
                     index <= activeIndex
                       ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" // Visible
-                      : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", // Collapsed at Top
+                      : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", // Hidden
                 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
               >

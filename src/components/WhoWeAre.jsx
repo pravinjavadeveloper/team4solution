@@ -102,7 +102,7 @@ export default function WhoWeAre() {
             viewport={{ once: true }}
           >
             <h1 className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2">
-              About GMTA Software
+              About Team4Solution Software
             </h1>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Who We Are?

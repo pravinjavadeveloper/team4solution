@@ -55,7 +55,6 @@ const faqData = [
 ];
 
 export default function FAQSection() {
-  // Track which FAQ is currently open (null = all closed)
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -63,24 +62,25 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-12 border-t border-white/5">
+    <section className="bg-black text-white py-12 md:py-24 px-4 md:px-12 border-t border-white/5 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* =========================================
             1. TOP SECTION: AWARDS / DIRECTORIES
            ========================================= */}
-        <div className="mb-24">
+        <div className="mb-16 md:mb-24">
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold mb-10 max-w-2xl"
+            className="text-xl md:text-3xl font-bold mb-8 md:mb-10 max-w-2xl text-center md:text-left mx-auto md:mx-0"
           >
-            Proudly Listed on Top-Tier Mobile <br />
+            Proudly Listed on Top-Tier Mobile <br className="hidden md:block"/>
             App Development Directories
           </motion.h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {/* RESPONSIVE GRID: 2 cols on mobile, 4 cols on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {awardsData.map((award, i) => (
               <motion.div
                 key={i}
@@ -88,11 +88,11 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="h-24 bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center gap-3 hover:border-blue-600/50 transition-colors group"
+                // Adjusted padding and height for mobile
+                className="h-20 md:h-24 bg-[#0a0a0a] border border-white/10 rounded-xl flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 hover:border-blue-600/50 transition-colors group p-2 text-center"
               >
-                {/* Placeholder Logo Icon */}
-                <Award className={`w-6 h-6 ${award.color}`} />
-                <span className={`font-bold text-lg ${award.color} group-hover:scale-105 transition-transform`}>
+                <Award className={`w-5 h-5 md:w-6 md:h-6 ${award.color}`} />
+                <span className={`font-bold text-sm md:text-lg ${award.color} group-hover:scale-105 transition-transform`}>
                   {award.name}
                 </span>
               </motion.div>
@@ -109,12 +109,12 @@ export default function FAQSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center text-3xl md:text-5xl font-bold mb-16"
+            className="text-center text-2xl md:text-5xl font-bold mb-10 md:mb-16"
           >
-            Frequently Asked Question
+            Frequently Asked Questions
           </motion.h2>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 md:gap-4">
             {faqData.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -132,24 +132,24 @@ export default function FAQSection() {
                   {/* --- QUESTION HEADER (Clickable) --- */}
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full flex items-center justify-between p-6 text-left"
+                    className="w-full flex items-center justify-between p-4 md:p-6 text-left gap-4"
                   >
-                    <span className="text-lg md:text-xl font-semibold flex gap-4">
-                      <span className="text-gray-500 font-mono">{item.id}.</span>
+                    <span className="text-base md:text-xl font-semibold flex gap-3 md:gap-4 leading-snug">
+                      <span className="text-gray-500 font-mono flex-shrink-0">{item.id}.</span>
                       {item.question}
                     </span>
                     
                     {/* Plus/Minus Button */}
                     <div 
-                      className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                      className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${
                         isOpen ? "bg-blue-600 text-white" : "bg-blue-600/10 text-blue-500"
                       }`}
                     >
-                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </div>
                   </button>
 
-                  {/* --- ANSWER CONTENT (Animated Dropdown) --- */}
+                  {/* --- ANSWER CONTENT --- */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -159,7 +159,8 @@ export default function FAQSection() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 pl-14 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                        {/* Adjusted padding for mobile text */}
+                        <div className="p-4 pt-0 pl-11 md:p-6 md:pt-0 md:pl-14 text-sm md:text-base text-gray-400 leading-relaxed border-t border-white/5 mt-2">
                           {item.answer}
                         </div>
                       </motion.div>

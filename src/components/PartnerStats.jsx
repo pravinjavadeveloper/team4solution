@@ -108,7 +108,8 @@ export default function PartnerStats() {
   return (
     <section ref={containerRef} className="bg-black text-white min-h-screen flex items-center justify-center px-6 overflow-hidden">
       
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"> */}
+        <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
         
         {/* --- LEFT SIDE: TEXT --- */}
         <div className="relative z-10 space-y-8 text-center lg:text-left">
@@ -123,7 +124,8 @@ export default function PartnerStats() {
         </div>
 
         {/* --- RIGHT SIDE: INTERACTIVE CHART --- */}
-        <div className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center scale-75 md:scale-100">
+        {/* <div className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center scale-100 md:scale-100"> */}
+          <div className="relative w-full h-[450px] md:h-[600px] flex items-center justify-center scale-100 md:scale-100">
           
           {/* CENTER BUTTON */}
           <div 
@@ -143,6 +145,8 @@ export default function PartnerStats() {
 
           {/* SVG LAYER */}
           <svg className="w-full h-full pointer-events-none" viewBox="0 0 800 800">
+          {/* <svg className="w-full h-full pointer-events-none" viewBox="-100 0 1000 800"> */}
+
             
             {chartData.map((slice) => (
               <g key={slice.id}>
@@ -202,3 +206,4 @@ export default function PartnerStats() {
     </section>
   );
 }
+

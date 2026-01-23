@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react'; // Changed useEffect to useLayoutEffect for better GSAP stability
+import { useLocation } from 'react-router-dom'; // 1. IMPORT THIS
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -15,8 +16,11 @@ gsap.registerPlugin(ScrollTrigger);
 const BlogReveal = () => {
   const containerRef = useRef(null);
   const triggerRef = useRef(null);
+  
+  // 2. GET CURRENT LOCATION
+  const location = useLocation(); 
 
-  useEffect(() => {
+  useLayoutEffect(() => { // Changed to useLayoutEffect
     const ctx = gsap.context(() => {
       
       // ========================================================
@@ -39,6 +43,7 @@ const BlogReveal = () => {
           end: "+=200%",
           scrub: 2, 
           pin: true, 
+          invalidateOnRefresh: true, // IMPORTANT: Helps recalculate on resize/refresh
         },
         defaults: { ease: "power3.out" } 
       });
@@ -96,16 +101,18 @@ const BlogReveal = () => {
 
     }, containerRef);
 
-    // --- ADDED THIS TIMER ONLY (Fixes the black screen on navigation) ---
+    return () => ctx.revert();
+  }, []); // Run once on mount
+
+  // 3. FORCE REFRESH WHEN ROUTE CHANGES
+  // This detects when you navigate to a new page and forces GSAP to
+  // re-measure where the BlogReveal section is located.
+  useLayoutEffect(() => {
     const timer = setTimeout(() => {
         ScrollTrigger.refresh();
-    }, 500);
-
-    return () => {
-        ctx.revert();
-        clearTimeout(timer); // Cleanup
-    };
-  }, []);
+    }, 100); // Small delay to allow new page to render
+    return () => clearTimeout(timer);
+  }, [location.pathname]); // Dependency: Runs every time URL changes
 
   return (
     <div ref={containerRef} className="bg-[#000000] font-['PP_Neue_Montreal',sans-serif]">
