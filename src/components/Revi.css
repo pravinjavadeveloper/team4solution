@@ -1,0 +1,71 @@
+/* Review.css */
+
+.ab {
+  margin: 0 0 16px;
+  text-align: center;
+  color: white; /* Added to ensure visibility */
+}
+
+/* ... (Keep your .sl styles if needed) ... */
+
+.swiper {
+  height: 440px;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+}
+
+.swiper-pagination {
+  bottom: 10px !important; /* Adjusted to sit nicely */
+  transform: scale(1.3);
+}
+
+/* Review.css */
+
+.swiper {
+  /* Increased height slightly to make room for shadow */
+  height: 500px; 
+  width: 100%;
+  padding-top: 50px;
+  /* Increased bottom padding so the shadow doesn't get clipped */
+  padding-bottom: 100px; 
+}
+
+.swiper-slide {
+  height: 300px;
+  width: 300px;
+  max-width: 80%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+
+  /* --- FIXED SHADOW CODE --- */
+  /* 1. below 10px: Adds a small gap between image and shadow.
+     2. rgba(0,0,0,0.6): 60% Visible (Much stronger than before).
+     3. transparent 30%: Fades out quickly (at 30% height) so it doesn't get cut off.
+  */
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.3), transparent 90%);
+}
+
+.swiper-slide div {
+  transition: 0.5s;
+  opacity: 0;
+  /* Centering Logic */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 40px; /* Adjusted padding */
+}
+
+.swiper-slide-active div {
+  opacity: 1;
+}
+
+.swiper-slide-shadow-coverflow {
+  border-radius: 20px;
+}

@@ -1,0 +1,120 @@
+import { motion } from 'framer-motion';
+import UniqueButton from './UniqueButton';
+
+const Banner = () => {
+  // Animation variants for a staggered reveal effect
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 100 },
+    },
+  };
+
+  // Floating animation for the icons
+  const floatAnimation = {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  };
+
+  return (
+    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <motion.div
+        className="bg-blue-600 rounded-3xl overflow-hidden shadow-2xl relative"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="flex flex-col lg:flex-row items-center justify-between p-10 lg:p-16">
+          {/* Left Content Section */}
+          <div className="lg:w-1/2 text-white z-10">
+            <motion.h2
+              className="text-4xl sm:text-5xl font-bold leading-tight mb-8"
+              variants={itemVariants}
+            >
+              Turn Your Ideas into Reality with Mobile and Web Solutions!
+            </motion.h2>
+            <motion.div variants={itemVariants}>
+              <UniqueButton>Get Consulting</UniqueButton>
+            </motion.div>
+          </div>
+
+          {/* Right Image Section */}
+          <motion.div
+            className="lg:w-1/2 relative mt-10 lg:mt-0"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, type: 'spring' }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/path/to/your/man-with-laptop-image.png" // Replace with your actual image path
+              alt="Man pointing with a laptop"
+              className="w-full max-w-md mx-auto lg:ml-auto object-contain"
+            />
+
+            {/* Floating Tech Icons */}
+            <motion.div
+              className="absolute top-0 left-10 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              animate={floatAnimation}
+              transition={{ delay: 0.5 }}
+            >
+              <img src="/path/to/figma-icon.png" alt="Figma" className="w-full h-full object-contain" />
+            </motion.div>
+            <motion.div
+              className="absolute top-20 right-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              animate={floatAnimation}
+              transition={{ delay: 1 }}
+            >
+              <img src="/path/to/angular-icon.png" alt="Angular" className="w-full h-full object-contain" />
+            </motion.div>
+            <motion.div
+              className="absolute bottom-10 left-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              animate={floatAnimation}
+              transition={{ delay: 1.5 }}
+            >
+              <img src="/path/to/android-icon.png" alt="Android" className="w-full h-full object-contain" />
+            </motion.div>
+            <motion.div
+              className="absolute bottom-32 right-5 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              animate={floatAnimation}
+              transition={{ delay: 2 }}
+            >
+              <img src="/path/to/flutter-icon.png" alt="Flutter" className="w-full h-full object-contain" />
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Optional: Subtle background wave or particle animation */}
+        <motion.div
+          className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none"
+          initial={{ backgroundPosition: '0% 50%' }}
+          animate={{ backgroundPosition: '100% 50%' }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          style={{
+            backgroundImage: 'url("/path/to/subtle-pattern.png")', // Add a subtle pattern if you have one
+            backgroundSize: '200% 200%',
+          }}
+        ></motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Banner;
