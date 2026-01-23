@@ -63,40 +63,59 @@ const Banner = () => {
             transition={{ duration: 0.8, delay: 0.4, type: 'spring' }}
             viewport={{ once: true }}
           >
+            {/* Main Image: Professional with Laptop */}
             <img
-              src="/path/to/your/man-with-laptop-image.png"
-              alt="Man pointing with a laptop"
-              className="w-full max-w-md mx-auto lg:ml-auto object-contain"
+              // Using a high-quality Unsplash image of a person working
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Professional working on laptop"
+              // Added rounded-xl and shadow to make the photo look integrated since it's not a transparent cutout
+              className="w-full max-w-md mx-auto lg:ml-auto object-cover rounded-xl shadow-lg border-4 border-white/20"
             />
 
             {/* Floating Tech Icons */}
             <motion.div
-              className="absolute top-0 left-10 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              className="absolute top-0 left-4 lg:left-10 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
               animate={floatAnimation}
               transition={{ delay: 0.5 }}
             >
-              <img src="/path/to/figma-icon.png" alt="Figma" className="w-full h-full object-contain" />
+              <img 
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
+                alt="Figma" 
+                className="w-full h-full object-contain" 
+              />
             </motion.div>
             <motion.div
-              className="absolute top-20 right-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              className="absolute top-20 right-4 lg:right-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
               animate={floatAnimation}
               transition={{ delay: 1 }}
             >
-              <img src="/path/to/angular-icon.png" alt="Angular" className="w-full h-full object-contain" />
+              <img 
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" 
+                alt="Angular" 
+                className="w-full h-full object-contain" 
+              />
             </motion.div>
             <motion.div
-              className="absolute bottom-10 left-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              className="absolute bottom-10 left-10 lg:left-20 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
               animate={floatAnimation}
               transition={{ delay: 1.5 }}
             >
-              <img src="/path/to/android-icon.png" alt="Android" className="w-full h-full object-contain" />
+              <img 
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" 
+                alt="Android" 
+                className="w-full h-full object-contain" 
+              />
             </motion.div>
             <motion.div
-              className="absolute bottom-32 right-5 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
+              className="absolute bottom-32 right-0 lg:right-5 w-12 h-12 bg-white p-2 rounded-full shadow-lg"
               animate={floatAnimation}
               transition={{ delay: 2 }}
             >
-              <img src="/path/to/flutter-icon.png" alt="Flutter" className="w-full h-full object-contain" />
+              <img 
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" 
+                alt="Flutter" 
+                className="w-full h-full object-contain" 
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -108,8 +127,9 @@ const Banner = () => {
           animate={{ backgroundPosition: '100% 50%' }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           style={{
-            backgroundImage: 'url("/path/to/subtle-pattern.png")', 
-            backgroundSize: '200% 200%',
+            // Using a simple abstract pattern from a reliable source or CSS gradient
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', 
+            backgroundSize: '32px 32px',
           }}
         ></motion.div>
       </motion.div>
