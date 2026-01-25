@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { 
+  motion, 
+  useMotionValue, 
+  useTransform, 
+  animate, 
+  useInView 
+} from 'framer-motion';
 import { industriesData } from '../data'; // Ensure path is correct
 import { 
-  ArrowRight, CheckCircle, ShieldCheck, Star, 
-  TrendingUp, Activity, Lock 
+  ArrowRight, CheckCircle, ShieldCheck, 
+  TrendingUp, Lock 
 } from 'lucide-react';
+import UniqueButton from '../components/UniqueButton';
+
+// --- Helper Component for Counting Animation ---
+// This component handles the "0 -> 100" animation when scrolled into view
+const Counter = ({ value, prefix = "", suffix = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      // Parse the numeric part of the value (e.g., "50%" -> 50)
+      const numericValue = parseFloat(value.toString().replace(/[^0-9.]/g, '')) || 0;
+      
+      const controls = animate(count, numericValue, { duration: 2.5, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [isInView, value, count]);
+
+  return (
+    <h3 ref={ref} className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-500 mb-2 flex justify-center items-baseline">
+      <span>{prefix}</span>
+      <motion.span>{rounded}</motion.span>
+      <span>{suffix}</span>
+    </h3>
+  );
+};
 
 // --- Animation Variants ---
 const fadeInUp = {
@@ -56,6 +90,14 @@ export default function IndustryPage() {
   const features = pageData.features || [];
   const compliance = pageData.compliance || [];
 
+  // Helper to extract prefix/suffix from stat strings like "$50B+" or "95%"
+  const getStatParts = (statValue) => {
+    const stringVal = statValue.toString();
+    const prefix = stringVal.match(/^[^0-9]*/)[0]; // Get leading non-digits (e.g. "$")
+    const suffix = stringVal.match(/[^0-9]*$/)[0]; // Get trailing non-digits (e.g. "B+")
+    return { prefix, suffix };
+  };
+
   return (
     <div className="bg-[#050505] text-white overflow-x-hidden font-sans">
       
@@ -96,13 +138,7 @@ export default function IndustryPage() {
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-gray-200 transition-all shadow-lg shadow-white/10 flex items-center justify-center gap-3">
-                Book Consultation
-                <ArrowRight size={20} />
-              </button>
-              <button className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all">
-                Explore Solutions
-              </button>
+              <UniqueButton/>
             </motion.div>
           </motion.div>
 
@@ -143,7 +179,7 @@ export default function IndustryPage() {
 
 
       {/* =========================================
-          2. MARKET STATISTICS BAR
+          2. MARKET STATISTICS BAR (WITH ANIMATION)
          ========================================= */}
       {stats.length > 0 && (
         <section className="border-b border-white/5 bg-[#0a0a0a]">
@@ -155,18 +191,20 @@ export default function IndustryPage() {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              {stats.map((stat, idx) => (
-                <motion.div 
-                  key={idx} 
-                  variants={fadeInUp}
-                  className="text-center sm:border-r border-white/10 last:border-0 sm:last:border-0 even:border-0 sm:even:border-r md:even:border-r md:last:border-0"
-                >
-                  <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-500 mb-2">
-                    {stat.value}
-                  </h3>
-                  <p className="text-white font-bold text-base md:text-lg mb-1">{stat.label}</p>
-                </motion.div>
-              ))}
+              {stats.map((stat, idx) => {
+                const { prefix, suffix } = getStatParts(stat.value);
+                return (
+                  <motion.div 
+                    key={idx} 
+                    variants={fadeInUp}
+                    className="text-center sm:border-r border-white/10 last:border-0 sm:last:border-0 even:border-0 sm:even:border-r md:even:border-r md:last:border-0"
+                  >
+                    {/* Replaced static value with Animated Counter */}
+                    <Counter value={stat.value} prefix={prefix} suffix={suffix} />
+                    <p className="text-white font-bold text-base md:text-lg mb-1">{stat.label}</p>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </section>
@@ -325,15 +363,11 @@ export default function IndustryPage() {
           <div className="relative z-10">
             <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6">Launch Your App Today</h2>
             <p className="text-base md:text-xl text-gray-400 mb-8 md:mb-10 max-w-2xl mx-auto">
-              Partner with GMTA to build scalable, secure, and future-proof {pageData.name} solutions.
+              Partner with Team4Solution to build scalable, secure, and future-proof {pageData.name} solutions.
             </p>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-12 md:py-5 rounded-full font-bold text-base md:text-lg transition-all shadow-lg shadow-blue-900/50 w-full sm:w-auto"
-            >
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-12 md:py-5 rounded-full font-bold text-base md:text-lg transition-all shadow-lg shadow-blue-900/50 w-full sm:w-auto">
               Get a Free Quote
-            </motion.button>
+            </button>
           </div>
         </motion.div>
       </section>

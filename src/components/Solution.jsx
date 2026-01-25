@@ -9,6 +9,7 @@ import web from "../assets/Parallex/webdev.png";
 import ecomm from "../assets/Parallex/ecom.png";
 import saas from "../assets/Parallex/sassdev.png";
 import uiux from "../assets/Parallex/uiiuxdes.png";
+import UniqueButton from "./UniqueButton";
 
 // Register the plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -131,7 +132,7 @@ export default function Solutions() {
                     <img src={item.img} alt={item.title} className="w-full h-auto object-cover" />
                 </div>
 
-                <span className="text-6xl font-black text-white/5 mb-4 block">
+                <span className="text-6xl font-black text-blue-500 mb-4 block">
                   0{item.id}
                 </span>
                 <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -187,7 +188,7 @@ export default function Solutions() {
         </div>
       </div>
 
-      <div className="h-[10vh]"></div>
+      <div className="relative top-15 z-10 flex items-center justify-center"><UniqueButton/></div>
     </section>
   );
 }

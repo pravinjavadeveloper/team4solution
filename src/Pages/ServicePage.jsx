@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { servicesData } from '../data'; // Ensure this path matches your file structure
 import { 
-  ArrowRight, Code, Star
-} from 'lucide-react';
+  motion, 
+  useMotionValue, 
+  useTransform, 
+  animate, 
+  useInView 
+} from 'framer-motion';
+import { servicesData } from '../data'; // Ensure this path matches your file structure
+import { ArrowRight, Code, Star } from 'lucide-react';
+import UniqueButton from '../components/UniqueButton';
 
-// Animation Variants
+// --- Helper Component for Counting Animation ---
+const Counter = ({ value, suffix = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [isInView, value, count]);
+
+  return (
+    <h4 ref={ref} className="text-2xl md:text-3xl font-bold text-white flex justify-center md:justify-start items-baseline">
+      <motion.span>{rounded}</motion.span>
+      <span>{suffix}</span>
+    </h4>
+  );
+};
+
+// --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -78,37 +105,30 @@ export default function ServicePage() {
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all flex items-center justify-center gap-3 group shadow-lg shadow-blue-900/20">
-                Let's Discuss
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg border border-white/20 hover:bg-white/5 transition-all">
-                View Portfolio
-              </button>
+             <UniqueButton/>
             </motion.div>
 
-            {/* Quick Stats - Responsive Grid */}
+            {/* Quick Stats - Responsive Grid with COUNTING ANIMATION */}
             <motion.div 
               variants={fadeInUp} 
               className="mt-10 md:mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 md:flex md:items-center md:gap-8"
             >
               <div className="text-center md:text-left">
-                <h4 className="text-2xl md:text-3xl font-bold text-white">7+</h4>
+                <Counter value={7} suffix="+" />
                 <p className="text-[10px] md:text-sm text-gray-500 uppercase tracking-wider">Years Exp.</p>
               </div>
               
-              {/* Divider hidden on mobile, visible on desktop */}
               <div className="hidden md:block w-px h-10 bg-white/20"></div>
               
               <div className="text-center md:text-left">
-                <h4 className="text-2xl md:text-3xl font-bold text-white">200+</h4>
+                <Counter value={200} suffix="+" />
                 <p className="text-[10px] md:text-sm text-gray-500 uppercase tracking-wider">Projects</p>
               </div>
               
               <div className="hidden md:block w-px h-10 bg-white/20"></div>
               
               <div className="text-center md:text-left">
-                <h4 className="text-2xl md:text-3xl font-bold text-white">30+</h4>
+                <Counter value={30} suffix="+" />
                 <p className="text-[10px] md:text-sm text-gray-500 uppercase tracking-wider">Countries</p>
               </div>
             </motion.div>

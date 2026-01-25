@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import UniqueButton from './UniqueButton';
 
+
 const Banner = () => {
   // Animation variants
   const containerVariants = {

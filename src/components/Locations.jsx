@@ -6,11 +6,12 @@ import { Phone, MapPin } from "lucide-react"; // Imported Icons
 const locationsData = [
   {
     id: 1,
-    name: "Navi Mumbai",
-    address: "Sadguru kripa 301, plot no 54A sector 19 Kharghar, Navi Mumbai",
-    number: "+91-8976280708",
-    // Image: Navi Mumbai / Mumbai vibe
-    image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800&auto=format&fit=crop", 
+    name: "United Kingdom",
+    address: "123 Portland Street, LN57LG. Lincoln. United Kingdom",
+    number: "+44-7774986218", // Placeholder kept as requested
+    // Image: Big Ben (UK)
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800&auto=format&fit=crop",
+    
   },
   {
     id: 2,
@@ -22,11 +23,12 @@ const locationsData = [
   },
   {
     id: 3,
-    name: "United Kingdom",
-    address: "123 Portland Street, LN57LG. Lincoln. United Kingdom",
-    number: "XX-XXXXXXXXX", // Placeholder kept as requested
-    // Image: Big Ben (UK)
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800&auto=format&fit=crop", 
+    name: "Navi Mumbai",
+    address: "Sadguru kripa 301, plot no 54A sector 19 Kharghar, Navi Mumbai",
+    number: "+91-8976280708",
+    // Image: Navi Mumbai / Mumbai vibe
+    image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800&auto=format&fit=crop", 
+     
   },
   {
     id: 4,

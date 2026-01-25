@@ -25,6 +25,8 @@ import ScrollToTop from './components/ScrollToTop';
 // --- IMPORT FOOTER ---
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import InteractiveLanding from './components/InteractiveLanding';
+import ProjectDiscussion from './components/ProjectDiscussion';
 
 export default function App() {
 
@@ -87,9 +89,10 @@ export default function App() {
 
         {/* --- GLOBAL SECTIONS (Visible on ALL Pages) --- */}
         <Revi />
-        <BlogReveal />
+        {/* <BlogReveal /> */}
+        <InteractiveLanding/>
         <Locations/>
-
+<ProjectDiscussion/>
       </div>
 
       {/* --- FOOTER (Fixed behind the content) --- */}

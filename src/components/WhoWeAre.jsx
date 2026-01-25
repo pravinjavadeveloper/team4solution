@@ -53,7 +53,7 @@ export default function WhoWeAre() {
           {/* IMAGE 1 (Back) - Rotated Left */}
           <motion.div 
             // FIXED: Responsive sizing (260px for small mobile -> 350px for desktop)
-            className="absolute w-[260px] h-[320px] sm:w-[300px] sm:h-[350px] md:w-[350px] md:h-[400px] rounded-[1.5rem] overflow-hidden border-4 border-[#0a0a0a] shadow-2xl z-10"
+            className="absolute w-[260px] h-[320px] sm:w-[300px] sm:h-[350px] md:w-[350px] md:h-[400px] rounded-[1.5rem] overflow-hidden border-4 border-[#0a0a0a] shadow-2xl z-8"
             initial={{ rotate: 0, scale: 0.8 }}
             // FIXED: Reduced X shift on mobile to prevent cutting off (-20px vs -40px)
             whileInView={{ rotate: -12, scale: 0.9, x: window.innerWidth < 768 ? -20 : -40 }} 
@@ -108,7 +108,7 @@ export default function WhoWeAre() {
               Who We Are?
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed">
-              GMTA Software is a thought-driven IT services provider, leveraging the industry's
+              Team4Solution Software is a thought-driven IT services provider, leveraging the industry's
               best tools and technologies. We foster industry dreams in our
               innovative software product development. We are committed to delivering excellence
               and driving digital transformation for businesses worldwide.

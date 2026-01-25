@@ -125,7 +125,7 @@ export default function PartnerStats() {
 
         {/* --- RIGHT SIDE: INTERACTIVE CHART --- */}
         {/* <div className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center scale-100 md:scale-100"> */}
-          <div className="relative w-full h-[450px] md:h-[600px] flex items-center justify-center scale-100 md:scale-100">
+          <div className="relative w-full h-[350px] md:h-[600px] flex items-center justify-center scale-80 md:scale-100">
           
           {/* CENTER BUTTON */}
           <div 
