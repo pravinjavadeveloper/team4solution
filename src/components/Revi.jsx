@@ -1,24 +1,38 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Star } from "lucide-react"; 
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "./Revi.css"; // Ensure this matches your CSS filename
+import "./Revi.css"; 
 
-const slide_image = "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80";
+// Ensure paths are correct
+import lady from "../user/lady.png"
+import man from "../user/man.png"
+import man1 from "../user/man1.png"
+import man2 from "../user/man2.png"
+import man3 from "../user/man3.png"
 
 const slides = [
-  { name: "India", src: slide_image },
-  { name: "Japan", src: slide_image },
-  { name: "Norway", src: slide_image },
-  { name: "Paris", src: slide_image },
-  { name: "London", src: slide_image },
-  { name: "India", src: slide_image },
-  { name: "Japan", src: slide_image },
-  { name: "Norway", src: slide_image },
-  { name: "Paris", src: slide_image },
-  { name: "London", src: slide_image },
+  { name: "Luke Moncrieffe", src:lady ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
+
+  { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
+  { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},
+
+  { name: "Yanik C", src: man1,review:"The kind of development service offered by TEAM4SOLUTION was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted TEAM4SOLUTION and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
+
+  { name: "Rajendra Sharma", src: man2,review:"Working with TEAM4SOLUTION was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
+
+   { name: "Luke Moncrieffe", src:lady ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
+
+  { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
+  { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},
+
+  { name: "Yanik C", src: man1,review:"The kind of development service offered by TEAM4SOLUTION was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted TEAM4SOLUTION and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
+
+  { name: "Rajendra Sharma", src: man2,review:"Working with TEAM4SOLUTION was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
+
 ];
 
 export const Carousel = () => {
@@ -26,28 +40,25 @@ export const Carousel = () => {
     <Swiper
       grabCursor
       centeredSlides
-      // REMOVED: slidesPerView={3} (We moved this to breakpoints below)
       speed={600}
       effect="coverflow"
       loop
-      loopAdditionalSlides
+      loopAdditionalSlides={3} 
       mousewheel
       pagination={{ clickable: true }}
+      
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
         depth: 100,
         modifier: 1,
-        slideShadows: true,
+        slideShadows: true, // RESTORED: This adds the dark shadow to side cards
       }}
       
-      // ADD THIS BREAKPOINTS SECTION
       breakpoints={{
-        // On Mobile/Tablet (0px and up): Use 'auto' so CSS controls width
         0: {
           slidesPerView: "auto",
         },
-        // On Laptop (1024px and up): Force 3 slides (Your original view)
         1024: {
           slidesPerView: 3,
         },
@@ -55,18 +66,27 @@ export const Carousel = () => {
       
       modules={[EffectCoverflow, Pagination]}
     >
-      {/* REMOVED the extra <div className="swipers-wrapper"> - It breaks Swiper! */}
-      
         {slides.map((slide, index) => (
-          <SwiperSlide
-            key={`${slide.name}-${index}`}
-            style={{
-              backgroundImage: `url(${slide.src})`,
-            }}
-          >
-            <div>
-              <h2 className='ab'>{slide.name}</h2>
+          <SwiperSlide key={`${slide.name}-${index}`} className="review-slide">
+            
+            <div className="card-content">
+                <div className="user-avatar">
+                    <img src={slide.src} alt={slide.name} />
+                </div>
+
+                <div className="stars-container">
+                    {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={20} fill="#FFD700" stroke="none" />
+                    ))}
+                </div>
+
+                <p className="review-text">
+                    "{slide.review}"
+                </p>
+
+                <h2 className="user-name">{slide.name}</h2>
             </div>
+
           </SwiperSlide>
         ))}
       
@@ -76,3 +96,22 @@ export const Carousel = () => {
 };
 
 export default Carousel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

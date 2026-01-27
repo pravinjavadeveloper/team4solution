@@ -4,11 +4,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+// Existing Images
 import mob from "../assets/Parallex/mobapp.png";
 import web from "../assets/Parallex/webdev.png";
 import ecomm from "../assets/Parallex/ecom.png";
 import saas from "../assets/Parallex/sassdev.png";
 import uiux from "../assets/Parallex/uiiuxdes.png";
+
+// Import your new security images here when you have them
+import securityAudit from "../assets/Parallex/saa.png";
+import mss from "../assets/Parallex/mss.png";
+import cloudSec from "../assets/Parallex/cloudsec.png";
+
 import UniqueButton from "./UniqueButton";
 
 // Register the plugin
@@ -45,6 +52,25 @@ const SOLUTIONS = [
     title: "UI/UX Designing",
     desc: "User-centric design is at our core. We craft intuitive interfaces and engaging user experiences that make your digital products a joy to use.",
     img: uiux,
+  },
+  // --- NEW SERVICES ADDED BELOW ---
+  {
+    id: 6,
+    title: "Security Assessments & Audits",
+    desc: "Identify weaknesses before attackers do. We conduct comprehensive vulnerability assessments, ethical penetration testing (Pentest), and high-level security posture reviews to safeguard your people, processes, and technology.",
+    img: securityAudit, // REPLACE with your specific security image
+  },
+  {
+    id: 7,
+    title: "Managed Security Services (MSS)",
+    desc: "Secure your business 24/7 with our SOC as a Service. We provide continuous monitoring, Managed Detection & Response (MDR), threat intelligence feeds, and robust firewall & endpoint management.",
+    img: mss, // REPLACE with your specific MSS image
+  },
+  {
+    id: 8,
+    title: "Cloud Security",
+    desc: "Secure your infrastructure across AWS, Azure, and GCP. We specialize in architecture hardening, Cloud Security Posture Management (CSPM), IAM, and integrating DevSecOps for secure cloud adoption.",
+    img: cloudSec, // REPLACE with your specific Cloud Security image
   },
 ];
 
@@ -118,10 +144,6 @@ export default function Solutions() {
               className="flex flex-col justify-center border-l border-white/10 p-6 py-20 md:p-[5.5rem] md:pt-32 md:min-h-screen"
             >
               <div
-                // --- FIXED HERE ---
-                // 1. Removed style={{ opacity: ... }}
-                // 2. Used Tailwind classes: "md:opacity-30" handles desktop dimming.
-                // 3. On Mobile, "md:" is ignored, so it defaults to opacity-100 (Full Visibility).
                 className={`max-w-lg transition-opacity duration-500 ${
                   activeIndex === index ? "opacity-100" : "md:opacity-30"
                 }`}
