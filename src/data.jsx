@@ -11,6 +11,31 @@ import {
   Navigation, Calendar, MessageSquare
 } from "lucide-react";
 
+// --- Service Imports ---
+import crm from "./services/crm.jpg"
+import ecomm from "./services/ecomm.png"
+import mobileapp from "./services/mobileapp.png"
+import saas from "./services/sass.png"
+import software from "./services/software.jpg"
+import uiux from "./services/uiux.jpg"
+import website from "./services/website.jpg"
+
+// --- Industry Imports ---
+import carrental from "./industries/carrental.jpg"
+import edu from "./industries/edu.jpg"
+import ewallet from "./industries/ewallet.jpg"
+import fintech from "./industries/fintech.jpg"
+import fitness from "./industries/fitness.jpg"
+import healthcare from "./industries/healthcare.jpg"
+import jobportal from "./industries/jobportal.jpg"
+import laundry from "./industries/laudnry.jpg"
+import logistic from "./industries/logistic.jpg"
+import media from "./industries/media.jpg"
+import ondemand from "./industries/ondemand.jpg"
+import price from "./industries/price.jpg"
+import realestate from "./industries/realestate.jpg"
+import travelapp from "./industries/travelapp.jpg"
+
 // ==========================================
 // 1. SERVICES DATA
 // ==========================================
@@ -19,7 +44,7 @@ export const servicesData = [
     name: "UI/UX Designing", 
     slug: "ui-ux-designing", 
     desc: "We craft intuitive, engaging, and aesthetically pleasing user interfaces that ensure a seamless user experience.",
-    heroImage: "https://images.unsplash.com/photo-1586717791821-3f44a5638d48?auto=format&fit=crop&q=80&w=1200",
+    heroImage: uiux, // Imported Variable
     features: [
       { title: "Wireframing", desc: "Structural blueprints.", icon: <LayoutTemplate className="text-blue-500" /> },
       { title: "Prototyping", desc: "Interactive mockups.", icon: <Layers className="text-purple-500" /> },
@@ -37,7 +62,7 @@ export const servicesData = [
     name: "Mobile App Development", 
     slug: "mobile-app-development", 
     desc: "High-performance native and cross-platform mobile applications tailored to your business.",
-    heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
+    heroImage: mobileapp, // Imported Variable
     features: [
       { title: "iOS Apps", desc: "Native Swift apps.", icon: <Smartphone className="text-blue-500" /> },
       { title: "Android Apps", desc: "Kotlin/Java apps.", icon: <FileCode className="text-green-500" /> },
@@ -55,7 +80,7 @@ export const servicesData = [
     name: "Website Development", 
     slug: "website-development", 
     desc: "Responsive, fast, and SEO-friendly websites built with modern technologies.",
-    heroImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=1200",
+    heroImage: website, // Imported Variable
     features: [
       { title: "Custom Dev", desc: "Tailored frontend coding.", icon: <Code className="text-indigo-500" /> },
       { title: "CMS", desc: "Easy content management.", icon: <LayoutTemplate className="text-blue-500" /> },
@@ -73,7 +98,7 @@ export const servicesData = [
     name: "Ecommerce Development", 
     slug: "ecommerce-development", 
     desc: "Scalable online stores with secure payment gateways and optimized user journeys.",
-    heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1200",
+    heroImage: ecomm, // Imported Variable
     features: [
       { title: "Storefronts", desc: "Custom themes & UI.", icon: <ShoppingCart className="text-orange-500" /> },
       { title: "Payments", desc: "Secure gateways.", icon: <CreditCard className="text-blue-500" /> },
@@ -91,7 +116,7 @@ export const servicesData = [
     name: "SaaS Development", 
     slug: "saas-development", 
     desc: "Robust Software-as-a-Service solutions designed for scalability and security.",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    heroImage: saas, // Imported Variable
     features: [
       { title: "Multi-Tenancy", desc: "Single instance, many users.", icon: <Users className="text-blue-500" /> },
       { title: "Cloud Native", desc: "AWS/Azure infrastructure.", icon: <Cloud className="text-sky-500" /> },
@@ -109,7 +134,7 @@ export const servicesData = [
     name: "CRM Development", 
     slug: "crm-development", 
     desc: "Custom CRM tools to streamline customer relationship management.",
-    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    heroImage: crm, // Imported Variable
     features: [
       { title: "Leads", desc: "Tracking sales pipelines.", icon: <Users className="text-indigo-500" /> },
       { title: "Analytics", desc: "Visual data dashboards.", icon: <BarChart className="text-blue-500" /> },
@@ -127,7 +152,7 @@ export const servicesData = [
     name: "Software Development", 
     slug: "software-development", 
     desc: "Tailor-made software solutions to address specific business challenges.",
-    heroImage: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80&w=1200",
+    heroImage: software, // Imported Variable
     features: [
       { title: "ERP", desc: "Enterprise resource planning.", icon: <Briefcase className="text-blue-500" /> },
       { title: "Modernization", desc: "Updating legacy systems.", icon: <ShieldCheck className="text-green-500" /> },
@@ -153,7 +178,7 @@ export const industriesData = [
     icon: <LayoutGrid size={20} className="text-blue-500" />, 
     tagline: "Instant Solutions",
     desc: "We build scalable on-demand applications that connect service providers with customers instantly.",
-    heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1200",
+    heroImage: ondemand, // Imported Variable
     stats: [
       { value: "$335B", label: "Market Size" },
       { value: "85%", label: "Mobile Usage" },
@@ -180,7 +205,7 @@ export const industriesData = [
     icon: <RefreshCw size={20} className="text-orange-500" />, 
     tagline: "Clean & Fast",
     desc: "Digitize your laundry business with custom pickup and delivery apps.",
-    heroImage: "https://images.unsplash.com/photo-1517677208171-0bc12dd59915?auto=format&fit=crop&q=80&w=1200",
+    heroImage: laundry, // Imported Variable
     stats: [
       { value: "$113B", label: "Global Market" },
       { value: "96%", label: "Retention Rate" },
@@ -207,7 +232,7 @@ export const industriesData = [
     icon: <Plane size={20} className="text-sky-500" />, 
     tagline: "Journey Made Easy",
     desc: "Comprehensive travel booking and management solutions for agencies and travelers.",
-    heroImage: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200",
+    heroImage: travelapp, // Imported Variable
     stats: [
       { value: "70%", label: "Mobile Bookings" },
       { value: "$800B", label: "Online Travel" },
@@ -234,7 +259,7 @@ export const industriesData = [
     icon: <Briefcase size={20} className="text-indigo-600" />, 
     tagline: "Connect Talent",
     desc: "Platforms connecting job seekers with employers, featuring resume parsing and smart matching.",
-    heroImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=1200",
+    heroImage: jobportal, // Imported Variable
     stats: [
       { value: "50M+", label: "Active Resumes" },
       { value: "85%", label: "Mobile Apply" },
@@ -261,7 +286,7 @@ export const industriesData = [
     icon: <Landmark size={20} className="text-blue-700" />, 
     tagline: "Future of Finance",
     desc: "Secure financial technology apps for banking, investing, and payments.",
-    heroImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
+    heroImage: fintech, // Imported Variable
     stats: [
       { value: "$305B", label: "Market Value" },
       { value: "64%", label: "Adoption Rate" },
@@ -288,7 +313,7 @@ export const industriesData = [
     icon: <Stethoscope size={20} className="text-red-500" />, 
     tagline: "Digital Health",
     desc: "Telemedicine and patient management apps compliant with healthcare regulations.",
-    heroImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
+    heroImage: healthcare, // Imported Variable
     stats: [
       { value: "40%", label: "Telehealth Growth" },
       { value: "$185B", label: "mHealth Market" },
@@ -315,7 +340,7 @@ export const industriesData = [
     icon: <Receipt size={20} className="text-teal-500" />, 
     tagline: "Best Deals Instantly",
     desc: "Aggregator platforms allowing users to compare prices across different vendors in real-time.",
-    heroImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200",
+    heroImage: price, // Imported Variable
     stats: [
       { value: "60%", label: "Users Compare" },
       { value: "200M", label: "Products Listed" },
@@ -342,7 +367,7 @@ export const industriesData = [
     icon: <GraduationCap size={20} className="text-purple-500" />, 
     tagline: "Smart Learning",
     desc: "E-learning platforms and LMS solutions for schools, universities, and training centers.",
-    heroImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1200",
+    heroImage: edu, // Imported Variable
     stats: [
       { value: "$375B", label: "EdTech Market" },
       { value: "90%", label: "Student Access" },
@@ -369,7 +394,7 @@ export const industriesData = [
     icon: <Wallet size={20} className="text-green-500" />, 
     tagline: "Cashless Freedom",
     desc: "Digital wallet solutions for fast, secure, and convenient cashless transactions.",
-    heroImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1200",
+    heroImage: ewallet, // Imported Variable
     stats: [
       { value: "4B+", label: "Users Globally" },
       { value: "$10T", label: "Transaction Vol" },
@@ -396,7 +421,7 @@ export const industriesData = [
     icon: <Truck size={20} className="text-yellow-600" />, 
     tagline: "Streamlined Supply Chain",
     desc: "Supply chain and fleet management apps to optimize logistics operations.",
-    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+    heroImage: logistic, // Imported Variable
     stats: [
       { value: "15%", label: "Fuel Saved" },
       { value: "99%", label: "On-Time Delivery" },
@@ -423,7 +448,7 @@ export const industriesData = [
     icon: <Home size={20} className="text-cyan-600" />, 
     tagline: "Find Your Home",
     desc: "Property listing and management apps for agents, buyers, and renters.",
-    heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200",
+    heroImage: realestate, // Imported Variable
     stats: [
       { value: "90%", label: "Online Search" },
       { value: "300%", label: "Inquiry Boost" },
@@ -450,7 +475,8 @@ export const industriesData = [
     icon: <Music size={20} className="text-orange-600" />, 
     tagline: "Uninterrupted Beats",
     desc: "Audio streaming apps with playlist management and offline playback capabilities.",
-    heroImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1200",
+    // NOTE: 'music' import was not provided in your list, keeping original link to prevent crash
+    heroImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1200", 
     stats: [
       { value: "500M+", label: "Subscribers" },
       { value: "$25B", label: "Revenue" },
@@ -477,7 +503,7 @@ export const industriesData = [
     icon: <Video size={20} className="text-purple-600" />, 
     tagline: "Stream Everywhere",
     desc: "Video streaming and content distribution platforms for creators and media houses.",
-    heroImage: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&q=80&w=1200",
+    heroImage: media, // Imported Variable
     stats: [
       { value: "82%", label: "Internet Traffic" },
       { value: "4K", label: "Resolution" },
@@ -504,7 +530,7 @@ export const industriesData = [
     icon: <Dumbbell size={20} className="text-red-600" />, 
     tagline: "Train Smart",
     desc: "Workout tracking and diet planning apps to help users achieve their health goals.",
-    heroImage: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1200",
+    heroImage: fitness, // Imported Variable
     stats: [
       { value: "30%", label: "Market Growth" },
       { value: "1B+", label: "Downloads" },
@@ -531,7 +557,7 @@ export const industriesData = [
     icon: <Car size={20} className="text-amber-600" />, 
     tagline: "Drive Your Way",
     desc: "Booking systems for car rental agencies with fleet tracking and availability management.",
-    heroImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200",
+    heroImage: carrental, // Imported Variable
     stats: [
       { value: "$120B", label: "Market Size" },
       { value: "Instant", label: "Booking" },
@@ -551,42 +577,5 @@ export const industriesData = [
       { name: "Insurance", desc: "Coverage" },
       { name: "GDPR", desc: "User Data" },
     ]
-  },
-];
-
-
-// ... existing imports and data
-
-// ==========================================
-// 4. LOCATIONS DATA
-// ==========================================
-export const locationsData = [
-  {
-    id: 1,
-    name: "Navi Mumbai",
-    address: "Sadguru kripa 301 , plot no 54A sector 19 Khargahr , Navi Mumbai",
-    number:+91-8976280708,
-    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop", // Hawa Mahal
-  },
-  {
-    id: 2,
-    name: "Malaysia",
-    address: "Scott sentral B11-03 , kuala Lumpur, Malaysia",
-    number:+60-187699352,
-    image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?q=80&w=800&auto=format&fit=crop", // Vidhana Soudha
-  },
-  {
-    id: 3,
-    name: "United Kingdo",
-    address: "123 Portland Street , LN57LG. Lincoln. United Kingdom",
-    number:+60-656565655,
-    image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=800&auto=format&fit=crop", // Chureito Pagoda
-  },
-  {
-    id: 4,
-    name: "New Zealand",
-    address: "2/271 Ormiston road, Flat Bush, Auckland, 2019, New Zealand",
-    number:+64-272581328,
-    image: "https://images.unsplash.com/photo-1605833556294-ea5c7a74f57d?q=80&w=800&auto=format&fit=crop", // Statue of Liberty
   },
 ];

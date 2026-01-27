@@ -2,14 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 // --- IMPORT YOUR IMAGES HERE ---
-import img1 from "../blog/img-1.jpg";
-import img2 from "../blog/img-2.jpg";
-import img3 from "../blog/img-3.jpg";
-import img4 from "../blog/img-4.jpg";
-import img5 from "../blog/img-5.jpg";
-import img6 from "../blog/img-6.jpg";
+import img1 from "../blog/img1.png";
+import img2 from "../blog/img2.png";
+import img3 from "../blog/img3.png";
+import img4 from "../blog/img4.png";
+import img5 from "../blog/img5.png";
+import img6 from "../blog/img6.png";
 
-import cursorImg from "../blog/cursor.png";
 
 const IMAGES = [img1, img2, img3, img4, img5, img6];
 
@@ -190,17 +189,7 @@ export default function InteractiveLanding() {
           opacity: 0 
         }}
       >
-        <img
-          src={cursorImg}
-          alt=""
-          style={{
-            width: "100px",
-            height: "100px",
-            objectFit: "contain",
-            display: "block",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
+        
       </div>
 
       {/* Wrapper (Header Content) */}

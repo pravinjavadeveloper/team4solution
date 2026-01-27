@@ -33,9 +33,11 @@ export default function Navbar() {
         </div>
       </Link>
 
-      {/* --- Desktop Navigation (Unchanged) --- */}
+      {/* --- Desktop Navigation --- */}
       <div className="hidden lg:flex items-center gap-10 font-semibold text-[15px] tracking-wide">
-        <Link to="/about" className="hover:text-blue-500 transition-colors">ABOUT US</Link>
+        
+        {/* CHANGED: Links to WhoWeAre.jsx */}
+        <Link to="/who-we-are" className="hover:text-blue-500 transition-colors">ABOUT US</Link>
 
         {/* SERVICES DROPDOWN */}
         <div 
@@ -71,7 +73,9 @@ export default function Navbar() {
           </AnimatePresence>
         </div>
 
-        <Link to="/portfolio" className="hover:text-blue-500 transition-colors">PORTFOLIO</Link>
+        {/* CHANGED: Links to Solution.jsx */}
+        <Link to="/solutions" className="hover:text-blue-500 transition-colors">PORTFOLIO</Link>
+        
         <Link to="/career" className="hover:text-blue-500 transition-colors">CAREER</Link>
 
         {/* INDUSTRIES DROPDOWN */}
@@ -105,17 +109,21 @@ export default function Navbar() {
                   ))}
                 </div>
                 <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4 } }}} className="bg-[#3b55e6] text-white px-10 py-5 flex items-center justify-between">
-                    <span className="text-xl font-bold">Trending Solution</span>
-                    <Link to="/contact" className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider hover:underline">
-                        view all <ArrowRight size={18} />
-                    </Link>
-                </motion.div>
+    <span className="text-xl font-bold">Trending Solution</span>
+    
+    {/* UPDATED LINK HERE */}
+    <Link to="/industries" className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider hover:underline">
+        view all <ArrowRight size={18} />
+    </Link>
+
+</motion.div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        <Link to="/blogs" className="hover:text-blue-500 transition-colors">BLOGS</Link>
+        {/* CHANGED: Links to InteractiveLanding.jsx */}
+        <Link to="/interactive-landing" className="hover:text-blue-500 transition-colors">BLOGS</Link>
       </div>
 
       {/* --- Mobile Menu Button --- */}
@@ -141,7 +149,8 @@ export default function Navbar() {
                 Let's Talk AI
               </button>
 
-              <Link to="/about" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">ABOUT US</Link>
+              {/* CHANGED: Mobile Link */}
+              <Link to="/who-we-are" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">ABOUT US</Link>
 
               {/* Mobile Services - Accordion */}
               <div className="border-b border-gray-800 pb-4">
@@ -177,7 +186,9 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <Link to="/portfolio" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">PORTFOLIO</Link>
+              {/* CHANGED: Mobile Link */}
+              <Link to="/solutions" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">PORTFOLIO</Link>
+              
               <Link to="/career" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">CAREER</Link>
 
               {/* Mobile Industries - Accordion */}
@@ -205,7 +216,6 @@ export default function Navbar() {
                              onClick={handleLinkClick}
                              className="flex items-center gap-3 py-2 active:text-white"
                            >
-                             {/* Ensure Icon renders properly */}
                              {React.cloneElement(item.icon, { size: 18 })}
                              <span>{item.name}</span>
                            </Link>
@@ -216,7 +226,8 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <Link to="/blogs" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">BLOGS</Link>
+              {/* CHANGED: Mobile Link */}
+              <Link to="/interactive-landing" onClick={handleLinkClick} className="border-b border-gray-800 pb-4 active:text-blue-500">BLOGS</Link>
 
             </div>
           </motion.div>
