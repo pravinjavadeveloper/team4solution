@@ -8,14 +8,14 @@ import "swiper/css/effect-coverflow";
 import "./Revi.css"; 
 
 // Ensure paths are correct
-import lady from "../user/lady.png"
+import man4 from "../user/man4.png"
 import man from "../user/man.png"
 import man1 from "../user/man1.png"
 import man2 from "../user/man2.png"
 import man3 from "../user/man3.png"
 
 const slides = [
-  { name: "Luke Moncrieffe", src:lady ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
+  { name: "Luke Moncrieffe", src:man4 ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
 
   { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
   { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},
@@ -24,7 +24,7 @@ const slides = [
 
   { name: "Rajendra Sharma", src: man2,review:"Working with TEAM4SOLUTION was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
 
-   { name: "Luke Moncrieffe", src:lady ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
+   { name: "Luke Moncrieffe", src:man4 ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
 
   { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
   { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},

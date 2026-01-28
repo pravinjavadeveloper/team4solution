@@ -19,7 +19,7 @@ import uiux from "../assets/Parallex/uiiuxdes.png";
 import securityAudit from "../assets/Parallex/saa.png";
 import mss from "../assets/Parallex/mss.png";
 import cloudSec from "../assets/Parallex/cloudsec.png";
-import digitalMark from "../assets/Parallex/saa.png"; 
+import digitalMark from "../assets/Parallex/digital.png"; 
 
 import UniqueButton from "./UniqueButton";
 
