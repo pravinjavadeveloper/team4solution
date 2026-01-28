@@ -68,7 +68,7 @@ export default function Career() {
           </div>
           <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
             Build the Future with <br/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Team4Solution</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Team4Solutions</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-4">
             Join a team of innovators. We don’t just write code; we solve complex problems and build digital experiences that matter.
@@ -109,7 +109,7 @@ export default function Career() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Current Openings</h2>
-            <p className="text-gray-400">Find your place at Team4Solution.</p>
+            <p className="text-gray-400">Find your place at Team4Solutions.</p>
           </div>
 
           <div className="space-y-4">
@@ -147,7 +147,7 @@ export default function Career() {
       <section className="py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Life at Team4Solution</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Life at Team4Solutions</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {perks.map((perk, idx) => (
@@ -169,7 +169,7 @@ export default function Career() {
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Don't see the right role?</h2>
             <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              We are always on the lookout for exceptional talent. If you think you'd be a great fit for Team4Solution, send us your resume!
+              We are always on the lookout for exceptional talent. If you think you'd be a great fit for Team4Solutions, send us your resume!
             </p>
             
             <button 
@@ -205,12 +205,12 @@ const ApplicationModal = ({ isOpen, onClose, role }) => {
     e.preventDefault();
 
     // 1. Define Email Variables
-    const recipient = "team4solution@gmail.com";
+    const recipient = "Team4Solutions@gmail.com";
     const subject = encodeURIComponent(`Application for ${role} - ${formData.name}`);
     
     // 2. Create Email Body with Line Breaks
     const body = encodeURIComponent(
-      `Hi Team,\n\nI am interested in applying for the ${role} position at Team4Solution.\n\n` +
+      `Hi Team,\n\nI am interested in applying for the ${role} position at Team4Solutions.\n\n` +
       `Here is my portfolio/LinkedIn: ${formData.portfolio || 'Attached in resume'}\n\n` +
       `Please find my resume attached to this email.\n\n` +
       `Best regards,\n${formData.name}`

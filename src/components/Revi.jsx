@@ -20,18 +20,18 @@ const slides = [
   { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
   { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},
 
-  { name: "Yanik C", src: man1,review:"The kind of development service offered by TEAM4SOLUTION was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted TEAM4SOLUTION and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
+  { name: "Yanik C", src: man1,review:"The kind of development service offered by Team4Solutions was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted Team4Solutions and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
 
-  { name: "Rajendra Sharma", src: man2,review:"Working with TEAM4SOLUTION was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
+  { name: "Rajendra Sharma", src: man2,review:"Working with Team4Solutions was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
 
    { name: "Luke Moncrieffe", src:man4 ,review: "Absolutely satisfied with their service! If anyone is searching for a trusted mobile app development company in London, I highly recommend them, they built me a fast, clean and user friendly app" },
 
   { name: "Oliver Ackerman", src: man,review:"Fantastic team and amazing support. Easily the best app development company in the UK. They were reliable, transparent, and always on time" },
   { name: "Hamza Dar", src: man3,review:"Excellent work by the team on my business (Muraad UK).Running an online business made much easier!! Great communication and delivered my requirements on time.Highly recommended"},
 
-  { name: "Yanik C", src: man1,review:"The kind of development service offered by TEAM4SOLUTION was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted TEAM4SOLUTION and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
+  { name: "Yanik C", src: man1,review:"The kind of development service offered by Team4Solutions was beyond my expectation. I wanted to live my website on a scheduled date but there were many problems I was facing. I contacted Team4Solutions and they provided me a team of expert and skilled developers. The team took my project and helped me in the timely release of my website" },
 
-  { name: "Rajendra Sharma", src: man2,review:"Working with TEAM4SOLUTION was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
+  { name: "Rajendra Sharma", src: man2,review:"Working with Team4Solutions was a great experience. From the documentation phase to final development, the team interacted with me very on a regular basis. They understood my requirements and delivered a top-class eWallet solution. They also gave me suggestions to make my app more flexible and better" },
 
 ];
 

@@ -51,7 +51,7 @@ export default function WhyPartner() {
       {/* --- SECTION HEADER --- */}
       <div className="text-center mb-10 md:mb-16 px-6 relative z-50">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Why Partner With Team4Solution Software?
+            Why Partner With Team4Solutions Software?
           </h2>
           <p className="text-gray-400 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
             We combine expertise, innovation, and agility to deliver IT solutions that drive measurable results.

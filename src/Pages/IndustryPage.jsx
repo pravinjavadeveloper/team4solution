@@ -267,7 +267,7 @@ export default function IndustryPage() {
           <div className="relative z-10">
             <h2 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6">Launch Your App Today</h2>
             <p className="text-base md:text-xl text-gray-400 mb-8 md:mb-10 max-w-2xl mx-auto">
-              Partner with Team4Solution to build scalable, secure, and future-proof {pageData.name} solutions.
+              Partner with Team4Solutions to build scalable, secure, and future-proof {pageData.name} solutions.
             </p>
             {/* 3. BUTTON TRIGGERS MODAL */}
             <button 

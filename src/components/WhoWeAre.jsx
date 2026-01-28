@@ -102,13 +102,13 @@ export default function WhoWeAre() {
             viewport={{ once: true }}
           >
             <h1 className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2">
-              About Team4Solution Software
+              About Team4Solutions Software
             </h1>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Who We Are?
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Team4Solution Software is a thought-driven IT services provider, leveraging the industry's
+              Team4Solutions Software is a thought-driven IT services provider, leveraging the industry's
               best tools and technologies. We foster industry dreams in our
               innovative software product development. We are committed to delivering excellence
               and driving digital transformation for businesses worldwide.
