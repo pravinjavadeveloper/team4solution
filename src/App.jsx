@@ -27,6 +27,7 @@ import InteractiveLanding from './components/InteractiveLanding';
 import ProjectDiscussion from './components/ProjectDiscussion';
 import AllIndustries from './pages/AllIndustries';
 import Contact from './pages/Contact';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // --- Wrapper to handle Scroll Reset on Route Change ---
 const ScrollHandler = () => {
@@ -67,6 +68,8 @@ export default function App() {
       <div className="relative z-10 bg-[#050505] mb-[100vh] shadow-2xl">
         
         <Navbar />
+              <WhatsAppButton/>
+
         
         <Routes>
           {/* --- HOME PAGE --- */}
